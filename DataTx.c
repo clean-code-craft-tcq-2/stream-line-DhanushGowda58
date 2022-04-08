@@ -3,7 +3,9 @@
 
 void Transmitting(BatParam_val)
 {
-    printf("{\"Temperature\":%0.2f,\"SOC\":%0.2f}\n",BatParam_val.Temperature,BatParam_val.Soc); // print in the console
+    float BattTemp = BatParam_val.Temperature;
+    float BattSoC = BatParam_val.Soc;
+    printf("{\"Temperature\":%0.2f,\"SOC\":%0.2f}\n",BattTemp,BattSoC); // print in the console
     
 }
 
