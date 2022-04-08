@@ -9,7 +9,7 @@ void Transmitting(BatParam_val)
 
 int main()
 {
-    for(int i=0;i<20;i++)
+    for(int i=0;i<50;i++)
     {
         BatParam_val.Temperature = (float)i;
         BatParam_val.Soc = (float)(i*2);
