@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 #define DATA "We all know Linux is great... it does infinite loops in 5 seconds"
 
