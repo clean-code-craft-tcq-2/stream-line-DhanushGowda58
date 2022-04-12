@@ -21,9 +21,6 @@ jobs:
       
     - name: run sender
       run: ./testsender
-       
-    - name: run receiver
-      run: ./testreceiver
 
     - name: collect coverage
       run:  gcovr --exclude="Test.*" --exclude="test.*" -r . --html --html-details -o coverage.html --print-summary
