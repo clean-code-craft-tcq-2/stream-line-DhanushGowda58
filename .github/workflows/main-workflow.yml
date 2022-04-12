@@ -17,10 +17,15 @@ jobs:
         
     - name: build sender
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender DataTx.c
+    - name: build receiver
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver.c 
   
       
     - name: run sender
       run: ./testsender
+      
+    - name: run receiver
+      run: ./testreceiver
 
     - name: collect coverage
       run:  gcovr --exclude="Test.*" --exclude="test.*" -r . --html --html-details -o coverage.html --print-summary
