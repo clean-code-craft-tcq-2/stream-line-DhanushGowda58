@@ -16,16 +16,12 @@ jobs:
         sudo apt-get install -y gcovr
         
     - name: build sender
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSendBatteryParameters.cpp trial.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender DataTx.c
   
       
     - name: run sender
       run: ./testsender
-      
-    - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver TestReceiveBatteryParameters.cpp ReceiveBatteryParameters.c
-  
-      
+       
     - name: run receiver
       run: ./testreceiver
 
