@@ -12,3 +12,9 @@ void ReadDataFromConsole()
 		printf("%f\t%f\n", Temp[i], Soc[i]);
 	}
 }
+
+int main()
+{
+	ReadDataFromConsole();
+}
+
