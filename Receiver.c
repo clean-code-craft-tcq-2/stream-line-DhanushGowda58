@@ -5,7 +5,7 @@
 
 #define DATA "We all know Linux is great... it does infinite loops in 5 seconds"
 
-void main(void)
+int main()
 {
     int sockets[2], child;
     
