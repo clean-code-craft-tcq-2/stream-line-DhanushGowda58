@@ -6,7 +6,7 @@
 
 TEST_CASE("Test to check Sender") 
 {
-  
+  printf("Data checking\n");
   //Read the first and last values of the text file and assert they have been properly added to batteryParameters 
   float expectedBatteryParameters[2][2] = {{3.42, 11.06}, {1.34, 64.52}};
 
