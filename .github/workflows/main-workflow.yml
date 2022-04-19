@@ -14,27 +14,18 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gcovr
-        
-    - name: build sender
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender DataTx.c
-    - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver.c 
-    - name: build sender
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSender.cpp DataTx.c
-  
+    - name: build
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker *.c*
       
-    - name: run sender
-      run: ./testsender
-      
-    - name: run receiver
-      run: ./testreceiver
+    - name: run
+      run: ./testchecker
 
     - name: collect coverage
-      run:  gcovr --exclude="Test.*" --exclude="test.*" -r . --html --html-details -o coverage.html --print-summary
+      run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
 
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
       with:
-        name: coverage
+        name: code_coverage
         path: ./*.html
         retention-days: 21
