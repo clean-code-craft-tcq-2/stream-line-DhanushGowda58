@@ -3,7 +3,6 @@
 #include "catch.hpp"
 #include "DataTx.h"
 
-
 TEST_CASE("Sending data to console")
 {
     REQUIRE(TxBatt_SoC() == true);
