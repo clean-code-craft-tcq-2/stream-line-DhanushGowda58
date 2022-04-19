@@ -1,15 +1,52 @@
-#include <stdio.h>
-#include "DataTx.h"
+#include "BMS_sender.h"
 
-bool TxBatt_SoC()
+int TemperatureData[NUMBERS_OF_READINGS];
+int SOCData[NUMBERS_OF_READINGS];
+
+void printToConsole(int batteryData[])
 {
-    for(int snsr_val_read=0;snsr_val_read<50;snsr_val_read++)
+	int i;
+	for (i = 0; i < NUMBERS_OF_READINGS; i++)
+	{
+	   printf("%d\n", batteryData[i]);
+	}
+}
+
+
+bool readDataFromFile(FILE* filePtr, int sensorData[])
+{
+    if (NULL == filePtr)
     {
-        BatParam_val.Temperature = (float)snsr_val_read;
-        BatParam_val.Soc = (float)(snsr_val_read*2);
-        float BattTemp = BatParam_val.Temperature;
-        float BattSoC = BatParam_val.Soc;
-        printf("{\"Temperature\":%0.2f,\"SOC\":%0.2f}\n",BattTemp,BattSoC); // print in the console    
+	printf("file cannot be opened \n");
+	return false;
     }
+
+    int i;
+    for (i = 0; fscanf(filePtr, "%d", &sensorData[i]) != EOF; i++)
+    {
+    	//do nothing
+    }
+
+    fclose(filePtr);
+    printToConsole(sensorData);
     return true;
+}
+
+
+bool BMS_DataSender()
+{
+	bool retVal1, retVal2;
+	FILE* fptr;
+	fptr = fopen("temparatue_sensor.txt","r");
+	printf("Temperature Sensor Data\n");
+	retVal1 = readDataFromFile(fptr, TemperatureData);
+
+	printf("\nSOC Sensor Data\n");
+	fptr = fopen("soc_sensor.txt","r");
+	retVal2 = readDataFromFile(fptr, SOCData);
+
+	if(retVal1 && retVal2)
+		return true;
+	else
+		return false;
 }
