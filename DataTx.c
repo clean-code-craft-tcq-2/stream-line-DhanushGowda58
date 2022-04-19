@@ -12,7 +12,6 @@ void printToConsole(int batteryData[])
 	}
 }
 
-
 bool readDataFromFile(FILE* filePtr, int sensorData[])
 {
     if (NULL == filePtr)
