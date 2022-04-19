@@ -1,13 +1,14 @@
-#ifndef DATASENDER_H__
-#define DATASENDER_H__
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 
-typedef struct
-{
-  float Temperature;
-  float Soc;
-}BatParam_test;
+#define NUMBERS_OF_READINGS    50
 
-BatParam_test BatParam_val; 
+extern int TemperatureData[NUMBERS_OF_READINGS];
+extern int SOCData[NUMBERS_OF_READINGS];
 
-#endif  /*DATASENDER_H__*/
+void printToConsole(int batteryData[]);
+bool readDataFromFile(FILE* filePtr, int sensorData[]);
+bool BMS_DataSender(void);
