@@ -4,17 +4,7 @@
 #include "DataTx.h"
 
 
-TEST_CASE("Test to check Sender") 
+TEST_CASE("Sending data to console")
 {
-  printf("Data checking\n");
-  //Read the first and last values of the text file and assert they have been properly added to batteryParameters 
-  float expectedBatteryParameters[2][2] = {{3.42, 11.06}, {1.34, 64.52}};
-
-   REQUIRE(BatParam_val[0].Temperature  == expectedBatteryParameters[0][0]);
-   REQUIRE(BatParam_val[0].Soc == expectedBatteryParameters[0][1]);
-
-   REQUIRE(BatParam_val[49].Temperature  == expectedBatteryParameters[1][0]);
-   REQUIRE(BatParam_val[49].Soc == expectedBatteryParameters[1][1]);
-                         
-
+    REQUIRE(TxBatt_SoC() == true);
 }
