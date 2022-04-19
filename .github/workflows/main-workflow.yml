@@ -19,6 +19,8 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender DataTx.c
     - name: build receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver Receiver.c 
+    - name: build sender
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSender.cpp DataTx.c
   
       
     - name: run sender
