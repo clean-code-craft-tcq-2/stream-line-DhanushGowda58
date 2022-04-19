@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "DataTx.h"
 
-int main()
+bool TxBatt_SoC()
 {
     for(int snsr_val_read=0;snsr_val_read<50;snsr_val_read++)
     {
@@ -11,5 +11,5 @@ int main()
         float BattSoC = BatParam_val.Soc;
         printf("{\"Temperature\":%0.2f,\"SOC\":%0.2f}\n",BattTemp,BattSoC); // print in the console    
     }
-    return 0;
+    return true;
 }
