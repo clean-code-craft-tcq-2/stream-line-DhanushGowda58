@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "DataRx.h"
 
-void Main()
+void main()
 {	
 float Temperature[NUMBERS_OF_READINGS] = {};
     for(int i = 0; i < NUMBERS_OF_READINGS ; i++)
