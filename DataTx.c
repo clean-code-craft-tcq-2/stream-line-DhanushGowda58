@@ -2,8 +2,8 @@
 
 int TemperatureData[NUMBERS_OF_READINGS];
 int SOCData[NUMBERS_OF_READINGS];
-
-void printToConsole(int *batteryData[])
+extern int batteryData[];
+void printToConsole()
 {
 	int i;
 	for (i = 0; i < NUMBERS_OF_READINGS; i++)
