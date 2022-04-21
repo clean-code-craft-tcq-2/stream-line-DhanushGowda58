@@ -21,7 +21,7 @@ jobs:
       
 
     - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver TestReceiver.cpp DataRx.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver DataRx.c
   
     - name: run sender
       run: ./testsender
