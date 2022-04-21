@@ -16,15 +16,18 @@ jobs:
         sudo apt-get install -y gcovr
         
     - name: build sender
-      run: g++ -Wall -Wextra testsender DataTx.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender DataTx.c
   
       
 
     - name: build receiver
-      run: g++ -Wall -Wextra testreceiver DataRx.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver DataRx.c
   
     - name: run sender
       run: ./testsender
+      
+    - name: run receiver
+      run: ./testreceiver
       
     - name: Pipeline sender/receiver
       run: ./testsender | ./testreceiver
