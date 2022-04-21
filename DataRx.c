@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include "DataRx.h"
 
-float main()
+int main()
 {	
 float Temperature[NUMBERS_OF_READINGS] = {};
     for(int i = 0; i < NUMBERS_OF_READINGS ; i++)
    { 
         scanf("%f", &Temperature[i]);
    }
-    return Temperature;
+    return 0;
 }
