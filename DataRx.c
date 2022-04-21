@@ -21,7 +21,6 @@ void ReadDataFromConsole(BatteryChargingParameters *batteryParameters)
         scanf("%50s", ReadString); //of
         scanf("%50s", ReadString); //charge:
         scanf("%f", &(batteryParameters->stateOfCharge));
-	//printf("%.3f \t %.3f\n",batteryParameters->temperature,batteryParameters->stateOfCharge);
 	batteryParameters++;
    }
 }
