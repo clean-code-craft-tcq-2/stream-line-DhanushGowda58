@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "ReceiveBatteryParameters.h"
+#include "DataRx.h"
 
 void ReadDataFromConsole(BatteryChargingParameters *batteryParameters)
 {	
