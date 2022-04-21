@@ -48,4 +48,5 @@ bool BMS_DataSender()
 		return true;
 	else
 		return false;
+
 }
