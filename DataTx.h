@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-
 #define NUMBERS_OF_READINGS    50
 
 extern int TemperatureData[NUMBERS_OF_READINGS];
