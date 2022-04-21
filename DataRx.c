@@ -6,7 +6,7 @@
 void ReadDataFromConsole(BatteryChargingParameters *batteryParameters)
 {	
     char ReadString[400];
-    for(int i = 0; i < STREAM_SIZE ; i++)
+    for(int i = 0; i < NUMBERS_OF_READINGS ; i++)
    {  
 	//scanf("%50s", ReadString);
 	if(scanf("%50s", ReadString) == EOF) 
@@ -29,7 +29,7 @@ void ReadDataFromConsole(BatteryChargingParameters *batteryParameters)
 BatteryChargingParameters ComputeMinBMSParameter(BatteryChargingParameters *batteryParameters)
 {
     BatteryChargingParameters MinValues={batteryParameters->temperature,batteryParameters->stateOfCharge};
-    for(int i = 0; i < STREAM_SIZE; i++){
+    for(int i = 0; i < NUMBERS_OF_READINGS; i++){
         if(batteryParameters->temperature < MinValues.temperature)
 	{
             MinValues.temperature=batteryParameters->temperature;
@@ -46,7 +46,7 @@ BatteryChargingParameters ComputeMinBMSParameter(BatteryChargingParameters *batt
 BatteryChargingParameters ComputeMaxBMSParameter(BatteryChargingParameters *batteryParameters)
 {
     BatteryChargingParameters MaxValues={batteryParameters->temperature,batteryParameters->stateOfCharge};
-    for(int i = 0; i < STREAM_SIZE; i++){
+    for(int i = 0; i < NUMBERS_OF_READINGS; i++){
         if(batteryParameters->temperature > MaxValues.temperature)
 	{
             MaxValues.temperature=batteryParameters->temperature;
@@ -64,14 +64,14 @@ BatteryChargingParameters ComputeAvgBMSParameter(BatteryChargingParameters *batt
 {
     BatteryChargingParameters AvgValues={0};
     BatteryChargingParameters Sum={0};
-    for(int i = 0; i < STREAM_SIZE; i++)
+    for(int i = 0; i < NUMBERS_OF_READINGS; i++)
     {
         Sum.temperature= Sum.temperature + batteryParameters->temperature;
 	Sum.stateOfCharge= Sum.stateOfCharge + batteryParameters->stateOfCharge;
 	batteryParameters++;    
     }
-    AvgValues.temperature = Sum.temperature/ STREAM_SIZE;
-    AvgValues.stateOfCharge = Sum.stateOfCharge/ STREAM_SIZE;
+    AvgValues.temperature = Sum.temperature/ NUMBERS_OF_READINGS;
+    AvgValues.stateOfCharge = Sum.stateOfCharge/ NUMBERS_OF_READINGS;
     return AvgValues;
 }
 
