@@ -18,17 +18,15 @@ jobs:
     - name: build sender
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSender.cpp DataTx.c
   
-      
-
     - name: build receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver DataRx.c
   
-  
+    - name: run sender
+      run: ./testsender
+      
     - name: run receiver
       run: ./testreceiver
       
-    - name: run sender
-      run: ./testsender
       
     - name: Pipeline sender/receiver
       run: ./testsender | ./testreceiver
