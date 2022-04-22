@@ -48,9 +48,10 @@ bool BMS_DataSender()
 		return true;
 	else
 		return false;
+	writeToFile();
 }
 
-int main(){
+int writeToFile(){
 	FILE *out=fopen("output.txt","w");
 	fputs("Hello File",out);
 	fclose(out);
