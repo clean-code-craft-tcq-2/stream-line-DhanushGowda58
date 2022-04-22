@@ -3,12 +3,12 @@
 int TemperatureData[NUMBERS_OF_READINGS];
 int SOCData[NUMBERS_OF_READINGS];
 
-void main()
+int main()
 {
-  float TempData;
+  int TempData;
   for (int i=0;i<50;i++)
   {
-    scanf("%f\n",&TempData);
+    scanf("%d\n",&TempData);
     printf("Temperature data = %d", TemperatureData[i]);
   }
 }
