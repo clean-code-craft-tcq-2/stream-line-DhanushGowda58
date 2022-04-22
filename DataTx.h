@@ -8,6 +8,7 @@
 extern int TemperatureData[NUMBERS_OF_READINGS];
 extern int SOCData[NUMBERS_OF_READINGS];
 
+int Temp_SoC_Data(void);
 //int printToConsole(void);
 //bool readDataFromFile(FILE* filePtr, int sensorData[]);
 //bool BMS_DataSender(void);
