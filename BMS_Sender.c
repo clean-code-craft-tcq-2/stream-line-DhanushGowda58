@@ -5,7 +5,7 @@
 int TemperatureData[NUMBERS_OF_READINGS];
 int SOCData[NUMBERS_OF_READINGS];
 
-int Temp_SoC_Data()
+int main()
 {
 int i;
 printf("Temperature Data\n");
