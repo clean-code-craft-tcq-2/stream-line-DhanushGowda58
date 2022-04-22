@@ -11,12 +11,12 @@ int main()
   printf("Temperature Data\n");
 	for (i = 0; i < NUMBERS_OF_READINGS; i++)
 	{
-	   printf("Temperature Data = %d\n", i);
+	   printf("%d\n", i);
 	}
-  printf("SoC Data\n");
+  printf("\nSoC Data\n");
   for (i = 0; i < NUMBERS_OF_READINGS; i++)
 	{
-	   printf("State of Charge Data = %d\n", i/2);
+	   printf("%d\n", i/2);
 	}
 return 0;
 }
