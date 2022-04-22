@@ -13,11 +13,13 @@ jobs:
     - name: build sender
       run: g++ -Wall -Wextra -o testsender BMS_Sender.c
   
+    - name: Run Sender
+      run: ./testsender
+  
     - name: build receiver
       run: g++ -Wall -Wextra -o testreceiver BMS_Receiver.c
 
-    - name: Run Sender
-      run: ./testsender
+
       
     - name: Pipeline sender/receiver
       run: ./testsender | ./testreceiver
