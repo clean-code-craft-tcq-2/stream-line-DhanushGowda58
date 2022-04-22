@@ -10,6 +10,6 @@ int main()
 char line[256];
 
 scanf("%255[^\n]%*c",line); // %*c to remove trailing \n
-fgets(line, 256, stdin)
+fgets(line, 256, stdin);
     
 }
