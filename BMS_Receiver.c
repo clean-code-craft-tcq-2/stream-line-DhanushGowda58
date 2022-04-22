@@ -9,6 +9,6 @@ int main()
   for (int i=0;i<50;i++)
   {
     scanf("%d\n",&TempData);
-    printf("Temperature data = %d", TemperatureData[i]);
+    printf("Temperature data = %d\n", TemperatureData[i]);
   }
 }
