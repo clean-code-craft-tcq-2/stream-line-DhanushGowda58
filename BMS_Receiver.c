@@ -12,7 +12,7 @@ char message[N];        /* character array for the message, you can always chang
 int i = 0;          /* loop counter */
 
 printf( "Enter a message: " );
-char message[i] = getchar();    /* get the first character */
+message[i] = getchar();    /* get the first character */
 while( message[i] != '\n' ){
     message[++i] = getchar(); /* gets the next character */
 }
@@ -20,8 +20,7 @@ while( message[i] != '\n' ){
 printf( "Entered message is:" );
 for( i = 0; i < N; i++ )
     printf( "%c", message[i] );
-  
-  printf("%c\n",line);
+
   for (int i=0;i<50;i++)
   {
     scanf("%d\n",&TempData);
