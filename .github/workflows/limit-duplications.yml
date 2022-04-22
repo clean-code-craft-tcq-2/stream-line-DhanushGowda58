@@ -1,9 +1,9 @@
-name: Duplications limit
+name: No Duplications
 
 on: [push, pull_request]
 
 jobs:
-  limit-duplications:
+  nodups:
 
     runs-on: ubuntu-latest
 
@@ -14,4 +14,4 @@ jobs:
       run: sudo npm install -g jscpd
 
     - name: No Duplication beyond 3 lines
-      run: jscpd ./ --min-lines 3 --min-tokens 50 --threshold 0 --mode strict
+      run: jscpd . --min-lines 3 --min-tokens 48 --threshold 0
