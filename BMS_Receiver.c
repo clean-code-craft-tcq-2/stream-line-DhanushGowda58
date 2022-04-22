@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "processingSenderData.h"
+#include "BMS_Receiver_Process_Data.h"
 #define NO_OF_DATASETS 50
 #define MAX_SIZE 128
 
