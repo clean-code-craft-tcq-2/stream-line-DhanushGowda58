@@ -22,17 +22,11 @@ struct bms_soc
 	struct stats soc_stat;
 };
 
-struct bms_chargeRate
-{
-	float value;
-	struct stats CR_stat;
-};
 
 struct BMS
 {
 	struct bms_temp temperature ;
 	struct bms_soc soc;
-	struct bms_chargeRate chargeRate;
 };
 
 float parseParamValueFromString (char *input);
