@@ -45,7 +45,7 @@ bool BMS_DataSender()
 	retVal2 = readDataFromFile(fptr, SOCData);
 	
 	FILE *out=fopen("output.txt","w");
-	fputs("Hello File",TemperatureData);
+	fputs("Hello File",out);
 	fclose(out);
 	
 	if(retVal1 && retVal2)
