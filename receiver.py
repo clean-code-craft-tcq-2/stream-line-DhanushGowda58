@@ -14,7 +14,7 @@ class Receiver:
         return consoleReadValues
 
     def processInput(self):
-        unprocessedInput = self.getRawValuesFromConsole();
+        unprocessedInput = self.getRawValuesFromConsole()
         for index in range(len(unprocessedInput)):
             if 'Temperature' in unprocessedInput[index]:
                 temperatureDataStartIndex = index
@@ -35,7 +35,6 @@ class Receiver:
         self.printToConsole(f'\nMinimum Temperature is {Temperature_Min} and Maximum Temperature is {Temperature_Max}')
         self.printToConsole(f'\nMinimum SOC is {SOC_Min} and Maximum SOC is {SOC_Max}')
 
-        return
     
     def getSimpleMovingAverage(self):
         samplesInMovingAverage = 5
@@ -57,17 +56,15 @@ class Receiver:
             if(index<samplesInMovingAverage-1):
                 simpleMovingAverageList.append('-')
                 continue
-            samplesForAverageCalulation = listToProcess[samplesInMovingAverage-index:index+1]
-            sum=0
-            for sample in samplesForAverageCalulation:
-                sum+=sample
-            movingAverage = sum/samplesInMovingAverage
+            samplesForAverageCalulation = listToProcess[index-samplesInMovingAverage+1:index+1]
+            movingAverage = round(sum(samplesForAverageCalulation)/samplesInMovingAverage, 2)
             simpleMovingAverageList.append(movingAverage)
         return simpleMovingAverageList
 
 
     def printToConsole(self, consoleMessage):
         print(consoleMessage)
+        return consoleMessage
 
-Receiver().getMinAndMaxData()
-Receiver().getSimpleMovingAverage()
+#Receiver().getMinAndMaxData()
+#Receiver().getSimpleMovingAverage()
