@@ -44,12 +44,15 @@ bool BMS_DataSender()
 	fptr = fopen("soc_sensor.txt","r");
 	retVal2 = readDataFromFile(fptr, SOCData);
 	
-	FILE *out=fopen("output.txt","w");
-	fputs("Hello File",out);
-	fclose(out);
-	
 	if(retVal1 && retVal2)
 		return true;
 	else
 		return false;
+}
+
+int main(){
+	FILE *out=fopen("output.txt","w");
+	fputs("Hello File",out);
+	fclose(out);
+	return 0;
 }
