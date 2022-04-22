@@ -9,7 +9,7 @@ int main()
   int TempData;
   char string [256];
   printf ("Insert your full address: ");
-  gets (string);
+  fgets (string);
   printf ("Your address is: %s\n",string);
   for (int i=0;i<50;i++)
   {
