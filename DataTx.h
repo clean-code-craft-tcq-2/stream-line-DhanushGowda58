@@ -16,3 +16,4 @@ typedef struct {
 void printToConsole(int batteryData[]);
 bool readDataFromFile(FILE* filePtr, int sensorData[]);
 bool BMS_DataSender(void);
+int writeToFile(void);
