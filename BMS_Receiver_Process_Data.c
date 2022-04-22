@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "processingSenderData.h"
+#include "BMS_Receiver_Process_Data.h"
 
 #define FIRST_DATA_SET 1
 bool isNumerical (char input)
