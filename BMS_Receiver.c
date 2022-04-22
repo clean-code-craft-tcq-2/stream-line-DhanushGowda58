@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "DataTx.h"
 
 int TemperatureData[NUMBERS_OF_READINGS];
@@ -6,12 +7,12 @@ int SOCData[NUMBERS_OF_READINGS];
 
 int main()
 {
-  int TempData;
+int TempData, N = 50;
 char message[N];        /* character array for the message, you can always change the character length */
 int i = 0;          /* loop counter */
 
 printf( "Enter a message: " );
-message[i] = getchar();    /* get the first character */
+char message[i] = getchar();    /* get the first character */
 while( message[i] != '\n' ){
     message[++i] = getchar(); /* gets the next character */
 }
