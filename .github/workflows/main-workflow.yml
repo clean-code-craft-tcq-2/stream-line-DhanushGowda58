@@ -19,7 +19,7 @@ jobs:
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender TestSender.cpp DataTx.c
   
     - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver DataRx.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver receiver.py
   
     - name: run sender
       run: ./testsender
