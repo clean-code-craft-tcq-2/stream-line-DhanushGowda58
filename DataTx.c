@@ -43,7 +43,11 @@ bool BMS_DataSender()
 	printf("\nSOC Sensor Data\n");
 	fptr = fopen("soc_sensor.txt","r");
 	retVal2 = readDataFromFile(fptr, SOCData);
-
+	
+	FILE *out=fopen("output.txt","w");
+	fputs("Hello File",TemperatureData);
+	fclose(out);
+	
 	if(retVal1 && retVal2)
 		return true;
 	else
