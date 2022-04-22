@@ -48,7 +48,6 @@ bool BMS_DataSender()
 		return true;
 	else
 		return false;
-	writeToFile();
 }
 
 int writeToFile(){
