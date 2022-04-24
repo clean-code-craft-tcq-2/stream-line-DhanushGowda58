@@ -19,7 +19,7 @@ class Receiver:
         for index in range(len(unprocessedInput)):
             if 'Temperature' in unprocessedInput[index]:
                 temperatureDataStartIndex = index
-            if 'SOC' in unprocessedInput[index]:
+            if 'SoC' in unprocessedInput[index]:
                 SOCDataStartIndex = index
         processedTemperatureData = list(map(float, unprocessedInput[temperatureDataStartIndex+1:SOCDataStartIndex]))
         processedSOCData = list(map(float, unprocessedInput[SOCDataStartIndex+1:]))
