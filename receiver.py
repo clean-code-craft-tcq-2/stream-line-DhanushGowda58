@@ -21,8 +21,9 @@ class Receiver:
                 temperatureDataStartIndex = index
             if 'SoC' in unprocessedInput[index]:
                 SOCDataStartIndex = index
+            final_index = index
         processedTemperatureData = list(map(float, unprocessedInput[temperatureDataStartIndex+1:SOCDataStartIndex]))
-        processedSOCData = list(map(float, unprocessedInput[SOCDataStartIndex+1:-1]))
+        processedSOCData = list(map(float, unprocessedInput[SOCDataStartIndex+1:final_index]))
         processedIncomingValues = (processedTemperatureData,processedSOCData)
 
         return (processedTemperatureData, processedSOCData)
