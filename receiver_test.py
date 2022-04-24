@@ -8,7 +8,7 @@ class Receiver_Test(unittest.TestCase):
        self.assertIsInstance(Receiver().getRawValuesFromConsole(), list)
     
     def test_processInput(self):
-        self.assertEqual(Receiver().processInput(['Temperature Data','1','3','5','SoC Data','7','11','18','=============']), ([1,3,5],[7,11,18]))
+        self.assertEqual(Receiver().processInput(['Temperature Data','1','3','5','SoC Data','7','11','18','=============','=============']), ([1,3,5],[7,11,18]))
 
     def test_getMinAndMaxData(self):
         self.assertEqual(Receiver().getMinData(([1,3,5],[7,11,18])), 1)
