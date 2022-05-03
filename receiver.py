@@ -70,6 +70,7 @@ class Receiver:
     def calculateSimpleMovingAverage(self, samplesInMovingAverage, listToProcess):
         simpleMovingAverageList = []
         for index in range(len(listToProcess)):
+            #Add a '-' instead of a value where all samples are still not available for average calculation
             if(index<samplesInMovingAverage-1):
                 simpleMovingAverageList.append('-')
                 continue
